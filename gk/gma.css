@@ -1,0 +1,15 @@
+.dpdl{
+    background-color: blue;
+}
+table{
+    text-align: center;
+    margin: 0px;
+}
+td{
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+}
+tr{
+    margin-top: 0px;
+}
