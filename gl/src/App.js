@@ -4,7 +4,8 @@ function App() {
   const [number, setNumber] = useState(5);
   const [rows, setRows] = useState([0,0,0,0,0]);
   const [columm, setColumm] = useState([0,0,0,0,0]);
-  const []
+  const [count] = useState([1]);
+  const [plus, setPlus] = useState();
 
   const allDeleteRow = () => {
     setRows([0,0,0,0,0]);
@@ -12,7 +13,7 @@ function App() {
     setNumber(5);
   };
 
-  const increaseNumber = () => {
+  const increaseNumber = () => {//+클릭시
     setNumber(number + 1);
     let data = {
       id: rows.length + 1
@@ -23,6 +24,8 @@ function App() {
       id: columm.length +1
     };
     setColumm([...columm, deta]);
+    
+    setPlus(number + count);
   };
 
   const decreaseNumber = () => {
@@ -47,8 +50,7 @@ function App() {
         <div>
             <tr>
               <th>{number} X {number}</th>
-              <td><button onClick={increaseNumber}>
-                +1</button></td>
+              <td><button onClick={increaseNumber}>+1</button></td>
               <td><button onClick={decreaseNumber}>-1</button></td>
               <tb><button onClick={allDeleteRow}>초기화</button></tb>
             </tr>
@@ -59,8 +61,7 @@ function App() {
                   {rows.map((d, number) => (
                     <tr key={number}>
                       <td>{columm.map((d, number) => (
-                        <td key={number}>
-                          <input id type="button"></input>
+                        <td key={number}>{number + 1}
                         </td>
                       ))}
                       </td>
